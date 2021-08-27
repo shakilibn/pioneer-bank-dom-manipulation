@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <div id="comment-container">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio officia voluptas rem itaque aperiam deleniti nulla recusandae quas vero dignissimos ullam nostrum, asperiores delectus tempora dolore dolorem repellat aliquid pariatur.</p>
+            <p>Consectetur ullam quae, perferendis error facilis minus mollitia quos ratione quam dolorem voluptas. Vero assumenda iste sunt velit? Veritatis, repellat cupiditate! Est ut in quasi veniam magni, repellat magnam deleniti.</p>
+        </div>
+        <div>
+            <textarea name="" id="new-comment" cols="50" rows="7"></textarea>
+            <br>
+            <button id="post-btn">post comment</button> <br> <br>
+        </div>
+    </section>
+    
+    <section>
+        <input id="input-delete" type="text"> 
+        <button id="delete-btn" disabled>delete</button>
+    </section>
+
+    <script>
+        // add comment
+        document.getElementById("post-btn").addEventListener("click", function(){
+            const newComment = document.getElementById("new-comment").value;
+            const commentContainer = document.getElementById("comment-container");
+            const p = document.createElement("p");
+            p.innerText = newComment;
+            commentContainer.appendChild(p);
+        })
+
+        document.getElementById("input-delete").addEventListener("focus", function(){
+            document.body.style.backgroundColor = "tomato"
+        })
+        document.getElementById("input-delete").addEventListener("blur", function(){
+            document.body.style.backgroundColor = "white";
+        })
+        document.getElementById("input-delete").addEventListener("keyup", function(event){
+            const deleteBtn = document.getElementById("delete-btn");
+            console.log(event.target.value);
+            if(event.target.value === "delete"){
+                deleteBtn.removeAttribute("disabled")
+            } else {
+                deleteBtn.setAttribute("disabled",true)
+            }
+        })
+    </script>
+</body>
+</html>

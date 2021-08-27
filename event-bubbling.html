@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #card {
+            background-color: tomato;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="card">
+        <h3>react developer</h3>
+        <span><button id="buy-btn">buy now</button></span>
+    </div>
+
+    <script>
+        document.getElementById("card").addEventListener("click",function() {
+            console.log("card clicked")
+        })
+
+        document.getElementById("buy-btn").addEventListener("click", function(event){
+            console.log("buy btn clicked");
+            event.stopPropagation();
+        })
+    </script>
+</body>
+</html>
