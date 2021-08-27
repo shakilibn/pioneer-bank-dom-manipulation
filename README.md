@@ -1,5 +1,5 @@
 # pioneer-bank-dom-manipulation
-practiced dom manipulation
+practiced dom manipulation and tailwind css
 
 live site : https://shakilibn.github.io/pioneer-bank-dom-manipulation/banking.html
 
